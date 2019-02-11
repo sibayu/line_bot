@@ -28,11 +28,11 @@ class LinebotController < ApplicationController
         case event.type
         when Line::Bot::Event::MessageType::Text
           crawler = DisneyCrawler.new
-          disney_json = crawler.crawl
+          disney_text = crawler.crawl
 
           message = {
               type: 'text',
-              text: disney_json#['text']+ '。どうもDisneyNavigatorと申します!!!'
+              text: disney_text#['text']+ '。どうもDisneyNavigatorと申します!!!'
           }
           client.reply_message(event['replyToken'], message)
         end
