@@ -1,5 +1,6 @@
 class LinebotController < ApplicationController
   require 'line/bot'  # gem 'line-bot-api'
+  require_relative "./disney_crawler.rb"
 
   # callbackアクションのCSRFトークン認証を無効
   protect_from_forgery :except => [:callback]
@@ -26,9 +27,12 @@ class LinebotController < ApplicationController
       when Line::Bot::Event::Message
         case event.type
         when Line::Bot::Event::MessageType::Text
+          crawler = DisneyCrawler.new
+          disney_json = crawler.crawl
+
           message = {
               type: 'text',
-              text: event.message['text']+ '。どうもDisneyNavigatorと申します!!!'
+              text: disney_json#['text']+ '。どうもDisneyNavigatorと申します!!!'
           }
           client.reply_message(event['replyToken'], message)
         end
