@@ -3,9 +3,9 @@ require 'open-uri'
 require 'nokogiri'
 
 class DisneyCrawler
-  def crawl
+  def crawl(park)
     test = ""
-    disney_html = Nokogiri::HTML(open("https://tokyodisneyresort.info/realtime.php?park=land&order=wait","User-Agent"=>"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"))
+    disney_html = Nokogiri::HTML(open("https://tokyodisneyresort.info/realtime.php?park=#{park}&order=wait","User-Agent"=>"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"))
     # アトラクション名とそれぞれの詳細情報を取得する
     attraction_info = disney_html.xpath("//div[contains(@class, 'realtime_item')]")
     # 全アトラクションについてのArray
@@ -29,7 +29,7 @@ class DisneyCrawler
 end
 
 crawler = DisneyCrawler.new
-test = crawler.crawl
+test = crawler.crawl("sea")
 puts test
 
 
