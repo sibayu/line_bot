@@ -28,7 +28,17 @@ class LinebotController < ApplicationController
         case event.type
         when Line::Bot::Event::MessageType::Text
           crawler = DisneyCrawler.new
-          disney_text = crawler.crawl
+
+          if event.message['text'] == "sea"
+            park = "sea"
+          else
+            park = "land"
+          end
+
+          disney_text = crawler.crawl(park)
+
+
+
 
           message = {
               type: 'text',
