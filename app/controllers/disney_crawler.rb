@@ -15,7 +15,7 @@ class DisneyCrawler
       if list.index("更新") then
 
       else if list.match(/FP|中|分|情報なし|案内/)
-             test += "\n"+list.strip
+             test += list.strip+"\n"
            else if list.match(/\<.+\>/)
 
                 else
