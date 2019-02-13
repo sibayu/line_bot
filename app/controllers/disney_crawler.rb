@@ -9,7 +9,7 @@ class DisneyCrawler
     # アトラクション名とそれぞれの詳細情報を取得する
     attraction_info = disney_html.xpath("//div[contains(@class, 'realtime_item')]")
     # 全アトラクションについてのArray
-    lists = attraction_info.to_s.gsub(/\n|\t|<br(\s+\/)?>/,"\n"=> ",", "\t" => "","<br(\s+/)?>"=>"").split(",")
+    lists = attraction_info.to_s.gsub(/\n|\t|<br(\s+\/)?>/,"\n"=> ",", "\t" => "","<br(\s+/)?>"=>",").split(",")
     # lists += attraction_info.to_s.strip
     lists.each do|list|
       if list.index("更新") then
@@ -19,7 +19,7 @@ class DisneyCrawler
            else if list.match(/\<.+\>/)
 
                 else
-                  test += "\n\n"+list.strip
+                  test += "\n"+list.strip
                 end
            end
       end
