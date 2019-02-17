@@ -42,7 +42,7 @@ class LinebotController < ApplicationController
 
           message = {
               type: 'text',
-              text: disney_text#['text']+ '。どうもDisneyNavigatorと申します!!!'
+              text: disney_text
           }
           client.reply_message(event['replyToken'], message)
         end
