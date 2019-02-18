@@ -19,6 +19,7 @@ line_bot/app/controllers/linebot_controller.rb（ライン上での表示の仕�
 ・変更内容
 
 line_bot/app/controllers/disney_crawler.rb
+
 →Disneycrawlerというclassを作成し
 https://tokyodisneyresort.info/realtime.php?park=land
 https://tokyodisneyresort.info/realtime.php?park=sea
@@ -27,6 +28,7 @@ lists変数にattraction_info内の余分な空白・文字を除去した情報
 再度待ち時間情報の取得→アトラクション名の取得し、eachメソッドで一行ずつ表示させた情報をresult変数に格納しています。
 
 line_bot/app/controllers/linebot_controller.rb
+
 →変更を加えた箇所は主に30行目からで、ラインに送られたメッセージが『Disney sea』であればdisneyseaのurlでクロールされるため、disneyseaの情報が表示され
 それ以外のメッセージの場合はdisneylandの情報が表示されるようになっています。
 またline_bot/app/controllers/disney_crawler.rbファイルで作成したDisneycrawlerクラスをdisney_textに格納し文字が送られれば返せるようになっています。
