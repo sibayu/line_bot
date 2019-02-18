@@ -36,10 +36,7 @@ class LinebotController < ApplicationController
           end
 
           disney_text = crawler.crawl(park)
-
-
-
-
+          
           message = {
               type: 'text',
               text: disney_text
