@@ -1,5 +1,7 @@
 # line_bot
 
+![image](./4vmHyd9GGB.png)
+
 ＜line_botレポジトリ 詳細＞
 
 ・環境構築
