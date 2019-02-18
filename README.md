@@ -1,4 +1,6 @@
-# line_bot
+# line_bot（Disney_app)
+
+＜line_bot仕様＞
 
 ![image](./4vmHyd9GGB.png)
 
