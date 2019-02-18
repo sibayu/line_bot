@@ -16,7 +16,7 @@ line_bot/app/controllers/disney_crawler.rb（webスクレイピングするこ�
 line_bot/app/controllers/linebot_controller.rb（ライン上での表示の仕方ファイル）
 です。
 
-変更内容は
+・変更内容
 line_bot/app/controllers/disney_crawler.rb
 →Disneycrawlerというclassを作成し
 https://tokyodisneyresort.info/realtime.php?park=land
