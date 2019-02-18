@@ -33,4 +33,3 @@ line_bot/app/controllers/linebot_controller.rb
 それ以外のメッセージの場合はdisneylandの情報が表示されるようになっています。
 またline_bot/app/controllers/disney_crawler.rbファイルで作成したDisneycrawlerクラスをdisney_textに格納し文字が送られれば返せるようになっています。
 
-<img src="4vmHyd9GGB.png" alt="エビフライトライアングル" title="サンプル">
