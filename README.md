@@ -34,4 +34,3 @@ line_bot/app/controllers/linebot_controller.rb
 またline_bot/app/controllers/disney_crawler.rbファイルで作成したDisneycrawlerクラスをdisney_textに格納し文字が送られれば返せるようになっています。
 
 
-
